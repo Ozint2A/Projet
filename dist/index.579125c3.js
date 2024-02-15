@@ -1,20 +1,17 @@
-let theme = "light";
+let theme = localStorage.getItem("changmod");
 const btn = document.getElementById("btn");
 const body = document.getElementById("changeMod");
+if (theme === "dark") body.style.backgroundColor = "black";
+else body.style.backgroundColor = "white";
 btn.addEventListener("click", ()=>{
     if (theme === "light") {
-        body.style.backgroundColor = "red";
+        body.style.backgroundColor = "black";
         theme = "dark";
     } else {
         body.style.backgroundColor = "white";
         theme = "light";
     }
+    localStorage.setItem("changmod", theme);
 });
-let cle = localStorage.getItem("theme");
-console.log(cle);
-localStorage.setItem("theme", "light");
-cle = localStorage.getItem("theme");
-console.log(cle);
-console.log("Faux");
 
 //# sourceMappingURL=index.579125c3.js.map
